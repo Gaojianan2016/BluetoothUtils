@@ -1,5 +1,5 @@
 # BluetoothUtils
-蓝牙工具
+蓝牙工具[![](https://jitpack.io/v/Gaojianan2016/BluetoothUtils.svg)](https://jitpack.io/#Gaojianan2016/BluetoothUtils)
 
 ```
 allprojects {
