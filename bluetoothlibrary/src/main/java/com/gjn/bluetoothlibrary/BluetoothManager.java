@@ -39,38 +39,15 @@ public class BluetoothManager {
     }
 
     public static String getDeviceStateStr(BluetoothDevice device) {
-        String str;
-        switch (device.getBondState()) {
-            case BluetoothDevice.BOND_BONDED:
-                str = "已配对";
-                break;
-            case BluetoothDevice.BOND_BONDING:
-                str = "配对中";
-                break;
-            case BluetoothDevice.BOND_NONE:
-            default:
-                str = "未配对";
-        }
-        return str;
+        return BluetoothConstant.getDeviceState(device);
+    }
+
+    public static String getBluetoothTyepStr(BluetoothDevice device){
+        return BluetoothConstant.getBluetoothType(device);
     }
 
     public static String getDeviceTypeStr(BluetoothDevice device) {
-        String str;
-        switch (device.getType()) {
-            case BluetoothDevice.DEVICE_TYPE_CLASSIC:
-                str = "传统蓝牙";
-                break;
-            case BluetoothDevice.DEVICE_TYPE_LE:
-                str = "低功耗蓝牙";
-                break;
-            case BluetoothDevice.DEVICE_TYPE_DUAL:
-                str = "双模蓝牙";
-                break;
-            case BluetoothDevice.DEVICE_TYPE_UNKNOWN:
-            default:
-                str = "未知";
-        }
-        return str;
+        return BluetoothConstant.getDeviceType(device);
     }
 
     public static String getDeviceName(BluetoothDevice device) {

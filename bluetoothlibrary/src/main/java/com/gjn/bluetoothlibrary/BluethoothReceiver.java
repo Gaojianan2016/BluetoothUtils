@@ -22,6 +22,7 @@ public class BluethoothReceiver extends BroadcastReceiver {
 
     public BluethoothReceiver(OnReceiveListener onReceiveListener) {
         this.onReceiveListener = onReceiveListener;
+        checkDevices();
     }
 
     @Override
@@ -37,7 +38,6 @@ public class BluethoothReceiver extends BroadcastReceiver {
                     break;
                 //开始扫描
                 case BluetoothAdapter.ACTION_DISCOVERY_STARTED:
-                    devices = new ArrayList<>();
                     if (onReceiveListener != null) {
                         onReceiveListener.discoveryStart(bluetoothDevice);
                     }
@@ -70,6 +70,12 @@ public class BluethoothReceiver extends BroadcastReceiver {
                     break;
                 default:
             }
+        }
+    }
+
+    private void checkDevices() {
+        if (devices == null) {
+            devices = new ArrayList<>();
         }
     }
 

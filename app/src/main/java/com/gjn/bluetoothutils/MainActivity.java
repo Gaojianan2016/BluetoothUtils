@@ -123,6 +123,12 @@ public class MainActivity extends AppCompatActivity {
                                 BluetoothManager.removeBond(device);
                             }
                         });
+                rv1.postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        BluetoothManager.createBond(device);
+                    }
+                }, 500);
             }
         });
 
